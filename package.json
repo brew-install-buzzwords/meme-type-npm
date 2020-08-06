@@ -1,0 +1,32 @@
+{
+  "name": "meme-type-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brew-install-buzzwords/meme-type-npm.git"
+  },
+  "keywords": [],
+  "author": "brew-install-buzzwords",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brew-install-buzzwords/meme-type-npm/issues"
+  },
+  "homepage": "https://github.com/brew-install-buzzwords/meme-type-npm#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.7"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
