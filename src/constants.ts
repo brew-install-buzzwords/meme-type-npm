@@ -96,3 +96,9 @@ export const emojifyDefaults = [
 
 /** fitzpatrick modifiers for emoji skin tone */
 export const fitzpatrickScaleModifiers = ["default", "🏻", "🏼", "🏽", "🏾", "🏿"];
+
+/** female unicode modifier */
+export const femaleModifier = `\u{200D}\u{2640}\u{FE0F}`;
+
+/** male unicode modifier */
+export const maleModifier = `\u{200D}\u{2642}\u{FE0F}`;
