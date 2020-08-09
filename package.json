@@ -1,6 +1,6 @@
 {
   "name": "meme-type-npm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a typescript package for transforming text into internet speak",
   "main": "lib/index.js",
   "scripts": {
