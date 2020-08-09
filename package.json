@@ -1,7 +1,7 @@
 {
   "name": "meme-type-npm",
   "version": "1.0.0",
-  "description": "typescript package for various internet typing transforms",
+  "description": "a typescript package for transforming text into internet speak",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
