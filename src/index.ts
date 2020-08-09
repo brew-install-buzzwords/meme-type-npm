@@ -5,6 +5,8 @@ import {
   symbols,
   homophones,
   emojifyDefaults,
+  femaleModifier,
+  maleModifier,
 } from "./constants";
 
 export type L33t1fySubstitution = "numbers" | "big" | "symbols" | "homophones";
@@ -63,6 +65,16 @@ export function altCapify(text: string): string {
  */
 export function applyFitzpatrick(emoji: Emoji, modifier: FitzpatrickModifier): string {
   if (emoji.fitzpatrick_scale && modifier) {
+    // move female modifier to end for proper unicode ordering
+    // more info here: https://unicode.org/emoji/charts/emoji-zwj-sequences.html
+    if (emoji.char.includes(femaleModifier)) {
+      return emoji.char.replace(femaleModifier,'') + modifier + femaleModifier;
+    }
+
+    // move male modifier to end for proper unicode ordering
+    if (emoji.char.includes(maleModifier)) {
+      return emoji.char.replace(maleModifier,'') + modifier + maleModifier;
+    }
 
     return emoji.char + modifier;
   }
