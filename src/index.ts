@@ -33,14 +33,14 @@ const emojifyValues = Object.values(emojis).filter((x) => x.category !== "flags"
  * @param text the text to be transformed
  * @returns the text with clap emojis
  */
-export function clapify(text: string, options: ClapifyOptions): string {
+export function clapify(text: string, options?: ClapifyOptions): string {
   const arr: string[] = text
   ?.toUpperCase()
   .split(/(\s+)/)
   .filter((e) => e.trim().length > 0);
   const clapEmoji = applyFitzpatrick(emojis.clap, options?.fitzpatrick);
   
-  return arr?.length ? arr.join(` ${clapEmoji} `) : "";
+  return arr?.length ? arr.join(` ${clapEmoji} `) + ` ${clapEmoji}` : clapEmoji;
 }
 
 /**
@@ -63,7 +63,7 @@ export function altCapify(text: string): string {
  * @param modifier the fitzpatrick modifier
  * @returns the modified emoji character
  */
-export function applyFitzpatrick(emoji: Emoji, modifier: FitzpatrickModifier): string {
+export function applyFitzpatrick(emoji: Emoji, modifier?: FitzpatrickModifier): string {
   if (emoji.fitzpatrick_scale && modifier) {
     // move female modifier to end for proper unicode ordering
     // more info here: https://unicode.org/emoji/charts/emoji-zwj-sequences.html
@@ -87,7 +87,7 @@ export function applyFitzpatrick(emoji: Emoji, modifier: FitzpatrickModifier): s
  * @param text the source text
  * @returns the text with emojis
  */
-export function emojify(text: string, options: EmojifyOptions): string {
+export function emojify(text: string, options?: EmojifyOptions): string {
   const textArr = text.split(/(\s+)/).filter((e) => e.trim().length > 0);
   const newTextArr: string[] = [];
   
@@ -203,4 +203,3 @@ export function l33t1fy(text: string, options: L33t1fyOptions): string {
 export function spaceify(text: string): string {
   return text.split("").join(" ");
 }
-  
